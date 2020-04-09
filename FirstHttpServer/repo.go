@@ -26,6 +26,14 @@ func RepoCreateTodo(t Todo) Todo {
 	return t
 }
 
+func RepoCreateTodoWithName(t Todo, name string) Todo {
+	currentId += 1
+	t.Id = currentId
+	t.Name = name
+	todos = append(todos, t)
+	return t
+}
+
 func RepoDestoryTodo(id int) error {
 	for i, t := range todos {
 		if t.Id == id {
